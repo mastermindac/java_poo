@@ -5,9 +5,15 @@ public class Posicion {
 	private int posY;
 
 	public Posicion() {
-		// TODO Auto-generated constructor stub
+		this.posX=0;
+		this.posY=0;
 	}
-
+	
+	public Posicion(int posx,int posy) {
+		this.posX=posx;
+		this.posY=posy;
+	}
+	
 	public int getPosX() {
 		return posX;
 	}
@@ -22,6 +28,11 @@ public class Posicion {
 
 	public void setPosY(int posY) {
 		this.posY = posY;
+	}
+	
+	public boolean esIgual(Posicion p) {
+		if(p.posX==this.posX&&p.posY==this.posY) return true;
+		else return false;
 	}
 
 }

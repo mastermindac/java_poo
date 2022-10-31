@@ -5,6 +5,7 @@ public class CPU extends Pieza{
 	int cache;
 
 	public CPU() {
+		super("cpu3434");
 		System.out.println("Nueva CPU");
 		this.cache=4;
 	}

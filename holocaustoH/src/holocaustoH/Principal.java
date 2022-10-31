@@ -7,15 +7,26 @@ public class Principal {
 		int accionJuego=-1;
 		Scanner in =new Scanner(System.in);
 
-		
 		//Posicionamos las puertas de entrada y salida
-		Posicion puertaIn=new Posicion(0,3);
-		Posicion puertaOut=new Posicion(5,Habitacion.ALTO-1);
+		Posicion pIn=new Posicion(0,3);
+		Posicion pOut=new Posicion(5,Habitacion.ALTO-1);
+		ObjetoJuego puertaIn=new ObjetoJuego();
+		puertaIn.setPos(pIn);
+		puertaIn.setLetraMapa(' ');
+		ObjetoJuego puertaOut=new ObjetoJuego();
+		puertaOut.setPos(pOut);
+		puertaOut.setLetraMapa(' ');
 		
 		//Generaremos el jugador y lo almacenamos en la Habitacion
 		Jugador jugador=new Jugador();
+		jugador.setPos(pIn);
+		jugador.setLetraMapa('J');
+		
 		//Generamos una habitación y sus elementos
-		Habitacion habInicial=new Habitacion(puertaIn,puertaOut,jugador);
+		Habitacion habInicial=new Habitacion();
+		habInicial.setObjetoJ(jugador);
+		habInicial.setObjetoJ(puertaIn);
+		habInicial.setObjetoJ(puertaOut);
 		
 
 		while(accionJuego!=Juego.SALIR_JUEGO) {

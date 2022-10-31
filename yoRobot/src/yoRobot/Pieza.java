@@ -7,8 +7,16 @@ public class Pieza {
 	private boolean activo;
 	
 	public Pieza() {
+		System.out.println("Se crea una nueva pieza");
 		this.peso=0;
 		this.numSerie="";
+		this.activo=true;
+	}
+	
+	public Pieza(String numSerie) {
+		System.out.println("Se crea una nueva pieza con num Serie");
+		this.peso=0;
+		this.numSerie=numSerie;
 		this.activo=true;
 	}
 

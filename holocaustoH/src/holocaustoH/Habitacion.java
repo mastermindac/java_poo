@@ -11,6 +11,10 @@ public class Habitacion {
 	private Posicion puertaEntrada;
 	private Posicion puertaSalida;
 	
+	//Conjunto de Objetos de Juego
+	private ObjetoJuego[] objetosJ=new ObjetoJuego[20];
+	private int numObjetos=0;
+	
 	//Hacemos una copia del jugador
 	private Personaje j;
 	
@@ -26,6 +30,20 @@ public class Habitacion {
 		this.j.setPos(this.puertaEntrada);
 	}
 
+	
+	public void setObjetoJ(ObjetoJuego obj) {
+		objetosJ[numObjetos]=obj;
+		numObjetos++;
+	}
+	
+	
+	//Versiones iniciales
+	public void setPersonaje(Personaje p) {
+	}
+	
+	public void setJugador(Jugador j) {
+		this.j = j;
+	}
 	public Posicion getPuertaEntrada() {
 		return puertaEntrada;
 	}
@@ -41,13 +59,6 @@ public class Habitacion {
 	public void setPuertaSalida(Posicion puertaSalida) {
 		this.puertaSalida = puertaSalida;
 	}
-	public void setPersonaje(Personaje p) {
-		
-	}
-	
-	public void setJugador(Jugador j) {
-		this.j = j;
-	}
 	
 	public boolean esunaPuerta(Posicion p) {
 		if(p.esIgual(puertaEntrada) || p.esIgual(puertaSalida)) return true;
@@ -58,6 +69,5 @@ public class Habitacion {
 		if(p.esIgual(j.getPos())) return true;
 		return false;
 	}
-	
 
 }

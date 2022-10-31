@@ -1,4 +1,4 @@
-package holocaustoH;
+
 
 public class Habitacion {
 	//Tamaño de la habitacion
@@ -13,6 +13,9 @@ public class Habitacion {
 	
 	//Hacemos una copia del jugador
 	private Personaje j;
+	//Elementos de la habitación
+	private ElementoJuego[] elementos=new ElementoJuego[20];
+	private int numElementos=0;
 	
 
 	public Habitacion() {
@@ -25,6 +28,12 @@ public class Habitacion {
 		this.j=j;
 		this.j.setPos(this.puertaEntrada);
 	}
+	public Habitacion(Posicion puertaIn,Posicion puertaOut,Posicion jugador) {
+		this.setElemento(new Objeto(puertaIn,' '));
+		this.setElemento(new Objeto(puertaOut,' '));
+		this.setElemento(new Jugador(jugador,' '));
+	}
+
 
 	public Posicion getPuertaEntrada() {
 		return puertaEntrada;
@@ -41,8 +50,10 @@ public class Habitacion {
 	public void setPuertaSalida(Posicion puertaSalida) {
 		this.puertaSalida = puertaSalida;
 	}
-	public void setPersonaje(Personaje p) {
-		
+
+	public void setElemento(ElementoJuego elemento) {
+		elementos[numElementos]=elemento;
+		numElementos++;
 	}
 	
 	public void setJugador(Jugador j) {

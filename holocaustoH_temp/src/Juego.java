@@ -1,4 +1,3 @@
-package holocaustoH;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Juego {
@@ -27,17 +26,21 @@ public class Juego {
 		}
 	}
 	
-	public static void pintarMenu() {
-		System.out.println("-------------- HOLOCAUSTO H (HADRON) --------------");
-		System.out.println("[1] LANZAR DADO DE MOVIMIENTO");
-		System.out.println("[0] SALIR DEL JUEGO");
-		System.out.println("---------------------------------------------------");
-	}
-	
 	public static int lanzarDado() {
-		int dado=ThreadLocalRandom.current().nextInt(1, 7);
+		int dado=ThreadLocalRandom.current().nextInt(1,7);
 		System.out.println("[DADO LANZADO] "+dado);
 		return dado;
 	}
+	
+	
+	public static void pintarMenu() {
+		System.out.println("-------------- HOLOCAUSTO H (HADRON) --------------");
+		System.out.println("[1] LANZAR DADO DE MOVIMIENTO");
+		
+		
+		System.out.println("[0] SALIR DEL JUEGO");
+		System.out.println("---------------------------------------------------");
+	}
+
 	
 }

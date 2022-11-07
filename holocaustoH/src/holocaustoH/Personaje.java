@@ -3,7 +3,6 @@ package holocaustoH;
 public class Personaje extends ObjetoJuego{
 
 	public Personaje() {
-		System.out.println("Creación de un personaje");
 	}
 	
 	//GETTERS & SETTERS

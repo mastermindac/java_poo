@@ -5,7 +5,7 @@ public class Hadron extends Personaje{
 	private boolean visible=true;
 
 	public Hadron() {
-		// TODO Auto-generated constructor stub
+		super.setTipoObjeto(ObjetoJuego.HADRON);
 	}
 	
 	public boolean cambioVisibilidad() {

@@ -2,7 +2,7 @@ package holocaustoH;
 
 public class Habitacion {
 	//Tamaño de la habitacion
-	public static final int ANCHO=10;
+	public static final int ANCHO=30;
 	public static final int ALTO=10;
 	
 	//Puertas
@@ -20,7 +20,6 @@ public class Habitacion {
 	
 
 	public Habitacion() {
-		System.out.println("Creación de una habitación");
 	}
 	
 	public Habitacion(Posicion puertaIn,Posicion puertaOut,Personaje j) {
@@ -30,10 +29,42 @@ public class Habitacion {
 		this.j.setPos(this.puertaEntrada);
 	}
 
-	
 	public void setObjetoJ(ObjetoJuego obj) {
 		objetosJ[numObjetos]=obj;
 		numObjetos++;
+	}
+	
+	public ObjetoJuego getObjetoJ(int objPos) {
+		return objetosJ[objPos];
+	}
+	
+	public void eliminarObjetoJ(int objPos) {
+		int posObjetos=0;
+		for (int i=0;i<numObjetos;i++) {
+			if(objPos!=i) {
+				objetosJ[posObjetos]=objetosJ[i];
+				posObjetos++;
+			}
+		}
+		numObjetos--;
+	}
+	
+	public int hayObjeto(Posicion p) {
+		for (int i=0;i<numObjetos;i++) {
+			ObjetoJuego obj=objetosJ[i];
+			Posicion objPosicion=obj.getPos();
+			if(p.esIgual(objPosicion)) return i;
+		}
+		return -1;
+	}
+	
+	public int hayObjetoSinJugador(Posicion p) {
+		for (int i=1;i<numObjetos;i++) {
+			ObjetoJuego obj=objetosJ[i];
+			Posicion objPosicion=obj.getPos();
+			if(p.esIgual(objPosicion)) return i;
+		}
+		return -1;
 	}
 	
 	
